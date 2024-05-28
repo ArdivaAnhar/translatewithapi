@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <title>Translate With API</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card translate-input">
+        <div>
+          <select id="selectInputLang"></select>
+        </div>
+        <div class="text-area">
+          <textarea id="inputText" placeholder="Masukkan teks"></textarea>
+        </div>
+        <div class="card-footer">
+          <button
+            type="button"
+            id="clear"
+            style="
+              cursor: pointer;
+              background: #ff0000;
+              padding: 4px 12px;
+              border-radius: 50%;
+              font-size: 18px;
+              border: none;
+              outline: none;
+            ">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="characters"><span id="inputChar">0</span> / 5000</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <i
+          onclick="swapLanguage(this)"
+          class="fas fa-arrow-right-arrow-left"
+          style="
+            cursor: pointer;
+            background: #fbff00;
+            padding: 13px 14px;
+            border-radius: 50%;
+            font-size: 18px;
+          "></i>
+        <i
+          onclick="translateText()"
+          class="fas fa-language"
+          style="
+            cursor: pointer;
+            background: #fbff00;
+            padding: 13px 11px;
+            border-radius: 50%;
+            font-size: 18px;
+          "></i>
+      </div>
+
+      <div class="card translate-output">
+        <div>
+          <select id="selectOutputLang"></select>
+        </div>
+        <div class="text-area">
+          <textarea
+            id="outputText"
+            disabled
+            placeholder="Terjemahan"></textarea>
+        </div>
+        <div class="card-footer-copy">
+          <i
+            onclick="copyLanguage(outputText)"
+            class="far fa-clipboard"
+            style="
+              cursor: pointer;
+              background: #0051ff;
+              padding: 12px 14px;
+              border-radius: 50%;
+              font-size: 18px;
+            "></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script src="assets/fontawesome/js/all.min.js"></script>
+  </body>
+</html>
